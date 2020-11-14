@@ -1,0 +1,129 @@
+/* 
+[css unit]: 
+em, rem / 
+vw, vh, vmin, vmax / 
+% / 
+flex grid, flex box
+
+[flex]:
+container - display, flex-flow, justify-content
+items - order, flex, align-self
+
+[size]:
+header 너비 : 1920px
+header 높이 : 108px - 고정
+logo : (x1)306px x 78px
+logo left margin : 24px
+logo right margin : 27px
+
+[font]
+윤고딕 폰트 - 저작권 문제 생각
+noto sans kr 폰트 고려 
+*/
+
+/* web part */
+
+/* header-container */
+header {
+  /* position*/
+  position: sticky; /* top에 고정 */
+  top: 0;
+
+  /* size */
+  width: 100vw;
+  height: 108px; /* 10vh */
+  background-color: #fff;
+
+  /* border */
+  border-image: linear-gradient(to right, #e1e857, #004483);
+  border-image-slice: 1;
+  border-bottom: solid 2px;
+
+  /* font */
+  font-size: 24px;
+  text-align: center;
+  line-height: 10vh;
+  color: #707070;
+
+  /* 항상 위에 z-index */
+  z-index: 1000;
+}
+
+.header-container {
+  /* flex */
+  display: flex;
+  justify-content: space-between; /* main-axis 정렬 */
+  align-items: center; /* 세로축 정렬 */
+}
+
+/* 
+header-container 
+skku ssen logo
+@x1 size 306px x 78px
+*/
+.header-logo {
+  /* 가변 패딩값 (로고 너비 306px기준) */
+  margin-left: 1.25%;
+  object-fit: fill;
+}
+
+/* 'OOO님 환영합니다' 메시지 출력 */
+/* font size - rem unit 사용 */
+.header-profile {
+  margin-right: 1.40625%;
+  font-size: 1.5em;
+}
+
+.header-profile .header-profile-name {
+  /* 고정값으로 간격을 줌 */
+  margin-right: 8px;
+
+  /* font style */
+  font-size: 1.5rem;
+  text-align: right;
+  color: #154483;
+}
+
+.header-profile .header-profile-msg {
+  /* font style */
+  font-size: 1.5rem;
+  text-align: right;
+  color: #707070;
+}
+
+/* // web part */
+
+/* mobile part */
+/* original 480px 기준 */
+@media screen and (max-width: 533px) {
+  /* 모바일: 로고 가운데로 이동 */
+
+  header {
+    position: relative;
+  }
+
+  /* 높이만 78px로 조정 */
+  .header-container {
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* size */
+    height: 78px;
+  }
+
+  /* 로고 크기 200 X 50px로 조정 */
+  .header-logo {
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+  }
+
+  /* 모바일: 내용 없어지게  */
+  .header-profile {
+    display: none;
+  }
+}
+/* // mobile part */
