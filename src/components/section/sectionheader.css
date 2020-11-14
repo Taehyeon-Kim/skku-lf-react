@@ -10,6 +10,8 @@ section-header
   flex-direction: column;
 
   margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
   width: 78.4375%;
 }
 
