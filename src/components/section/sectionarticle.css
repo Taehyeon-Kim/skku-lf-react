@@ -135,11 +135,3 @@ article .article-container .project-info .project-like .project-like-count {
 
   color: #ffffff;
 }
-
-article video {
-  background-color: lightsalmon;
-
-  display: none;
-
-  width: 100%;
-}

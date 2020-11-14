@@ -16,6 +16,7 @@ class Section extends Component {
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         pdfURL: 'images/test.jpg',
         likeCount: 48,
+        isClicked: false,
       },
       { 
         groupNumber: 2,
@@ -26,6 +27,7 @@ class Section extends Component {
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         pdfURL: 'images/test.jpg',
         likeCount: 100,
+        isClicked: false,
       },
       { 
         groupNumber: 3,
@@ -36,16 +38,30 @@ class Section extends Component {
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         pdfURL: 'images/test.jpg',
         likeCount: 100,
+        isClicked: false,
       },
     ]
-  } 
+  }
+
+  handleClick = project => {
+    const projects = [...this.state.projects];
+    const index = projects.indexOf(project);
+
+    projects[index].isClicked = !projects[index].isClicked;
+  
+    this.setState({projects});
+  }
 
   render() {
     return (
       <section>
         <Sectionheader />
         {this.state.projects.map(project => (
-        <Sectionarticle key={project.groupNumber} project={project} />
+        <Sectionarticle 
+          key={project.groupNumber} 
+          project={project} 
+          onClick = {this.handleClick}
+        />
         ))}
       </section>
     );

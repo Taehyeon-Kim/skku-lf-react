@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player';
 import './section.css'
 import './sectionarticle.css'
 
 class Sectionarticle extends Component {
+  handleClick = () => {
+    this.props.onClick(this.props.project);
+  }
+
   render() {
-    const {pdfURL, title, description, likeCount, groupName, members} = this.props.project;
+    const {pdfURL, title, description, likeCount, groupName, members, isClicked} = this.props.project;
 
     return (
       <article>
@@ -49,14 +54,20 @@ class Sectionarticle extends Component {
           </div>
 
           {/* 동영상 버튼  */}
-          <button className="show-video">시연 동영상 보기</button>
+          <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
         </div>
         {/* // 그룹 정보 마무리 */}
 
       </div>
       {/* // 아티클 컨테이너 마무리 */}
 
-      <video src=""></video>
+      <ReactPlayer 
+        className="react-player" 
+        url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+        width='100%'
+        height='800px'
+        style={{ display : (isClicked ? 'block' : 'none') }}
+      />
 
     </article>
     );
