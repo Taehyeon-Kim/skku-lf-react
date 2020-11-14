@@ -17,6 +17,7 @@ class Section extends Component {
         pdfURL: 'images/test.jpg',
         likeCount: 48,
         isClicked: false,
+        isLike: false,
       },
       { 
         groupNumber: 2,
@@ -28,6 +29,7 @@ class Section extends Component {
         pdfURL: 'images/test.jpg',
         likeCount: 100,
         isClicked: false,
+        isLike: false,
       },
       { 
         groupNumber: 3,
@@ -37,8 +39,9 @@ class Section extends Component {
         members: ['---', '---', '---', '---'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         pdfURL: 'images/test.jpg',
-        likeCount: 100,
+        likeCount: 44,
         isClicked: false,
+        isLike: false,
       },
     ]
   }
@@ -52,6 +55,21 @@ class Section extends Component {
     this.setState({projects});
   }
 
+  // 좋아요 이벤트
+  handleLike = project => {
+    const projects = [...this.state.projects];
+    const index = projects.indexOf(project);
+
+    projects[index].isLike = !projects[index].isLike; 
+    if (projects[index].isLike) {
+      projects[index].likeCount--;
+    } else {
+      projects[index].likeCount++;
+    }
+  
+    this.setState({projects});
+  }
+
   render() {
     return (
       <section>
@@ -61,6 +79,7 @@ class Section extends Component {
           key={project.groupNumber} 
           project={project} 
           onClick = {this.handleClick}
+          onLike = {this.handleLike}
         />
         ))}
       </section>

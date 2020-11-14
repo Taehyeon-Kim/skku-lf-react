@@ -8,8 +8,12 @@ class Sectionarticle extends Component {
     this.props.onClick(this.props.project);
   }
 
+  handleLike = () => {
+    this.props.onLike(this.props.project);
+  }
+
   render() {
-    const {pdfURL, title, description, likeCount, groupName, members, isClicked} = this.props.project;
+    const {pdfURL, title, description, likeCount, groupName, members, isClicked, isLike} = this.props.project;
 
     return (
       <article>
@@ -32,7 +36,10 @@ class Sectionarticle extends Component {
             {description}
           </div>
           <div className="project-like">
-            <button className="project-like-button"><img src="/images/unlike-button.png" alt=""/></button>
+          {/* <img src="/images/unlike-button.png" alt=""/> */}
+            <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
+            "/images/unlike-button.png" : "/images/like-button.png"} alt=""/></button>
+            
             <span className="project-like-count">{likeCount}</span>
           </div>
         </div>
