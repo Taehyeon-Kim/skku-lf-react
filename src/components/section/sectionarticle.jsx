@@ -38,7 +38,7 @@ class Sectionarticle extends Component {
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
             <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
-            "/images/unlike-button.png" : "/images/like-button.png"} alt=""/></button>
+            "/images/like-button.png" : "/images/unlike-button.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>
           </div>

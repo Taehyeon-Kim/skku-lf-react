@@ -43,6 +43,18 @@ class Section extends Component {
         isClicked: false,
         isLike: false,
       },
+      { 
+        groupNumber: 4,
+        title: '테스트 프로젝트 4', 
+        class: '4분반',
+        groupName: '테스트 싫어',
+        members: ['김모씨', '이모씨', '박모씨', '강모씨'],
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        pdfURL: 'images/test.jpg',
+        likeCount: 44,
+        isClicked: false,
+        isLike: false,
+      },
     ]
   }
 
@@ -62,9 +74,9 @@ class Section extends Component {
 
     projects[index].isLike = !projects[index].isLike; 
     if (projects[index].isLike) {
-      projects[index].likeCount--;
-    } else {
       projects[index].likeCount++;
+    } else {
+      projects[index].likeCount--;
     }
   
     this.setState({projects});
