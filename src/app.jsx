@@ -5,12 +5,18 @@ import Navbar from './components/navbar/navbar'
 import Section from './components/section/section'
 import Footer from './components/footer/footer'
 import Login from './components/login/login'
+import Main from './components/main/main'
 
 function App() {
   return (
     <>
       <Header />
-        <Login />
+      <div className="wrapper">
+        <Navbar />
+        <Main />
+      </div>
+      
+      {/* <Login /> */}
       
       {/* <div className="wrapper">
         <Navbar />

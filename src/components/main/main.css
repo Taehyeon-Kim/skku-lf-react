@@ -1,0 +1,39 @@
+.main_banner_area {
+  width: 100%;
+}
+
+.main_banner_img {
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.video_area_wrapper {
+  display: flex;
+}
+
+.react-player {
+  margin-top: 30px;
+  /* margin-left: 60px; */
+}
+
+.congrat_video_area {
+  margin-right: 40px;
+}
+
+#congrat_video_area_title {
+  font-size: 3vh;
+  margin-top: 50px;
+  /* margin-left: 60px; */
+}
+
+#congrat_video_area_subtitle {
+  font-size: 2vh;
+  font-weight: 500;
+  margin-top: 20px;
+  /* margin-left: 60px; */
+  color: #154483;
+}
+#congrat_video_area_title strong {
+  font-weight: bold;
+  color: #154483;
+}
