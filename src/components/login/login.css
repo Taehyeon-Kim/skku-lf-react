@@ -1,4 +1,4 @@
-#section {
+/* #section {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -54,4 +54,4 @@ button:hover:before,
 button:hover:after {
   width: 100%;
   transition: 800ms ease all;
-}
+} */
