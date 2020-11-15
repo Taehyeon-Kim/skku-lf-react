@@ -1,0 +1,57 @@
+#section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main_banner_area {
+  margin: 5vh auto;
+}
+
+.main_banner_img {
+  height: 30vh;
+}
+
+.login_button_area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+button {
+  background: #9fcb3b;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+button:hover {
+  background: #fff;
+  color: #9fcb3b;
+}
+button:before,
+button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #9fcb3b;
+  transition: 400ms ease all;
+}
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}

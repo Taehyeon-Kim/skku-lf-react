@@ -55,18 +55,6 @@ class Section extends Component {
         isClicked: false,
         isLike: false,
       },
-      { 
-        groupNumber: 5,
-        title: '총 프로젝트 개수 기능', 
-        class: '3분반',
-        groupName: '1S3K',
-        members: ['김모씨', '이모씨', '박모씨', '강모씨'],
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        pdfURL: 'images/test.jpg',
-        likeCount: 44,
-        isClicked: false,
-        isLike: false,
-      },
     ]
   }
 
