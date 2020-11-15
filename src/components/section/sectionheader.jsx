@@ -21,7 +21,7 @@ class Sectionheader extends Component {
 
         {/* 프로젝트 개수 정보 */}
         <div className="end-line-container">
-          <div className="project-count">총 <strong>{this.state.projectCount}</strong>개의 작품이 등록되었습니다.</div>
+          <div className="project-count">총 <strong>{this.props.projectCount}</strong>개의 작품이 등록되었습니다.</div>
         </div>
         
       </div>
